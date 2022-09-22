@@ -11,6 +11,7 @@
     "
   >
     <router-link to="/">
+      <div style="position:sticky; top:5px">
       <button
         @click="goHome"
         :class="[
@@ -21,8 +22,9 @@
       >
         <!-- Si chiama Ternary condition operator-->
         Home
-      </button></router-link
-    >
+      </button>
+    </div>
+    </router-link>
   </div>
 
   <transition>
