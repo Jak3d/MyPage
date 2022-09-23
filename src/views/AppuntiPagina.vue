@@ -12,7 +12,10 @@
     </div>
   </div>
   <div style="float: left; width: 15%; position: sticky; top: 1px; left: 5px;">
-    <div class="box has-background-grey-lighter">
+    <transition name="slide-fade-left">
+    
+    
+    <div v-if="this.activeNotes==='SO'" class="box has-background-grey-lighter">
     
       <aside class="menu">
         <p class="menu-label">General</p>
@@ -43,6 +46,7 @@
         </ul>
       </aside>
     </div>
+  </transition>
   </div>
   
   <div>
@@ -139,6 +143,19 @@ export default {
 .slide-fade-enter-from,
 .slide-fade-leave-to {
   transform: translateX(20px);
+  opacity: 0;
+}
+.slide-fade-left-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-left-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-left-enter-from,
+.slide-fade-left-leave-to {
+  transform: translateX(-20px);
   opacity: 0;
 }
 </style>
