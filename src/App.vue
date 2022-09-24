@@ -1,57 +1,28 @@
 <template>
-  <h1 class="title is-1">Leonardo Marro</h1>
-  <div
-    style="
-      width: fit-content;
-      oldposition: -webkit-sticky;
-      oldposition: sticky;
-      margin-left: auto;
-      margin-right: 20px;
-      top: 15px;
-    "
-  >
-    <router-link to="/">
-      <div style="position:sticky; top:5px">
-      <button
-        @click="goHome"
-        :class="[
-          activePage === 'Home'
-            ? 'button is-link is-large is-invisible'
-            : 'button is-link is-large',
-        ]"
-      >
-        <!-- Si chiama Ternary condition operator-->
-        Home
-      </button>
-    </div>
-    </router-link>
-  </div>
+  <router-link to="/" @click="setActivePage('Home')"><h1  class="title is-1">Leonardo Marro</h1></router-link>
+  
 
   <transition>
-    <div class="tabs is-centered is-large is-boxed">
+    <div class="tabs is-centered  is-boxed is-medium">
       <ul>
         <!-- <li @click="goHome" :class="[activePage === 'Home' ? 'is-active': '']"><a>Pictures</a></li> -->
-        <li
-          @click="setActivePage('Links')"
-          :class="[activePage === 'Links' ? 'is-active' : '']"
-        >
-          <router-link to="/Links">Links</router-link>
-        </li>
+        
         <li
           @click="setActivePage('Projects')"
           :class="[activePage === 'Projects' ? 'is-active' : '']"
         >
-          <router-link to="/Projects">Projects</router-link>
+          <router-link to="/Projects"><font-awesome-icon icon="fa-solid fa-diagram-project" />&zwnj; Projects</router-link>
+        </li>
+        <li @click="setActivePage('Home')" :class="[activePage === 'Home' ? 'is-active' : '']">
+          <router-link to="/"><font-awesome-icon icon="fa-solid fa-user" />&zwnj; About</router-link>
         </li>
         <li
-          @click="
-            setActivePage('About');
-            changePage();
-          "
-          :class="[activePage === 'About' ? 'is-active' : '']"
+          @click="setActivePage('CV')"
+          :class="[activePage === 'CV' ? 'is-active' : '']"
         >
-          <router-link to="/About">About</router-link>
+          <router-link to="/CV"><font-awesome-icon icon="fa-solid fa-book" />&zwnj; CV  </router-link>
         </li>
+        
       </ul>
     </div>
   </transition>
@@ -62,13 +33,14 @@
   <transition>
     <body v-if="activePage === 'Home'">
       <div
-        :style="[
+      :style="[
           oldPosition === 'right'
             ? 'text-align: centre; width: 50%; padding-left: 70px'
             : 'text-align: centre; width: 50%; float:right',
         ]"
       >
-        <h1 class="title">Ciao</h1>
+        <h1 class="title">Ciao </h1>
+       
         <h1>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
           facilisis dolor ac lacus finibus, non viverra est gravida. Maecenas in
@@ -160,7 +132,7 @@
       </div>
     </body>
   </transition>
-  <footer style="display:inline-block; bottom: 10px; width: 100%; margin-top: 50px;">
+  <footer class="footer" :style="[this.activePage !== 'Home' ? 'bottom:3px ; clear: both;width 95%;' :'bottom:3px ; clear: both' ]">
     
     <div class="content has-text-centered">
     <p>

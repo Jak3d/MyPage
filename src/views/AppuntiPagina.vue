@@ -15,9 +15,9 @@
     <transition name="slide-fade-left">
     
     
-    <div v-if="this.activeNotes==='SO'" class="box has-background-grey-lighter">
+    <div v-if="this.activeNotes==='SO'" class="box has-background-grey-lighter" >
     
-      <aside class="menu">
+      <aside class="menu" >
         <p class="menu-label">Sistemi Operativi</p>
         <ul class="menu-list">
           <li>

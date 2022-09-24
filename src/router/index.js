@@ -1,23 +1,18 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import AboutPage from '../views/AboutPage'
+import CV from '../views/CV'
 import ProjectPage from '../views/Projects'
-import LinksPage from '../views/Links'
+
 import AppuntiPage from '../views/AppuntiPagina'
 
 const routes = [
-    {path:'/About',
-    name:'About',
-    component:AboutPage,
+    {path:'/CV',
+    name:'CV',
+    component:CV,
     },
     {
         path:'/Projects',
         name:'Projects',
         component: ProjectPage,
-    },{
-        path:'/Links',
-        name:'Links',
-        component: LinksPage,
-        meta: { transition: 'slide-left' },
     },
     {
         path:'/Appunti',
