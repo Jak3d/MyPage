@@ -13,6 +13,7 @@ import { faBook } from '@fortawesome/free-solid-svg-icons'
 import { faDiagramProject } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import router from './router'
 library.add(faBook)
 library.add(faDiagramProject)
 library.add(faUser)
@@ -21,7 +22,7 @@ library.add(faGithub)
 
 
 //createApp(App).use(router).use(VueMathjax).mount('#app')
-const app = createApp(App)
+const app = createApp(App).use(router)
 app.use(VueMathjax)
 app.use(router)
 app.component('font-awesome-icon', FontAwesomeIcon)
